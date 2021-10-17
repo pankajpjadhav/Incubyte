@@ -51,6 +51,8 @@ public class StringCalculator {
 			System.out.println(add("7,8,10"));
 			// System.out.println(add("2/***;-3"));
 			// System.out.println(add("-2/***;-3"));
+			System.out.println(add("//[*]\n1**2**3"));
+			System.out.println(add("//[*][%]\\n1*2%3"));
 			System.out.println(getCount());
 		} catch (InvalidInputException | NegativeValueException e) {
 			System.out.println(e.getMessage());
