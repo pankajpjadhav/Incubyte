@@ -2,9 +2,10 @@ package com.sunbeam;
 
 import java.util.ArrayList;
 
+
 public class StringCalculator {
 
-	public static int add(String nums) {
+	public static int add(String nums) throws InvalidInputException {
 		if (nums.length() == 0)
 			return 0;
 		ArrayList<String> list = new ArrayList<>();
@@ -20,6 +21,8 @@ public class StringCalculator {
 				str = "";
 			}
 		}
+		if (nums.length() > 1 && nums.substring(nums.length() - 1).equals("\n"))
+			throw new InvalidInputException("Invalid input");
 		if (str.length() > 0)
 			list.add(str);
 		int sum = 0;
@@ -30,9 +33,14 @@ public class StringCalculator {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(add("1,2 ,3"));
-		System.out.println(add("1,4 , 1,4 ,5"));
-		System.out.println(add("7,8,10"));
+		
+		try {
+			System.out.println(add("1,2 ,3"));
+			System.out.println(add("1,4 , 1,4 ,5"));
+			System.out.println(add("7,8,10"));
+		} catch (InvalidInputException e) {
+			System.out.println(e.getMessage());;
+		}
 	}
 
 }
