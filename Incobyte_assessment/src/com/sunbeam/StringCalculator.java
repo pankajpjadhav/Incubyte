@@ -4,15 +4,15 @@ import java.util.ArrayList;
 
 public class StringCalculator {
 
-	public static int add(String numbers) {
-		if (numbers.length() == 0)
+	public static int add(String nums) {
+		if (nums.length() == 0)
 			return 0;
 		ArrayList<String> list = new ArrayList<>();
 		String str = "";
-		for (int i = 0; i < numbers.length(); i++) {
+		for (int i = 0; i < nums.length(); i++) {
 
-			if (numbers.charAt(i) >= 48 && numbers.charAt(i) <= 57)
-				str += numbers.charAt(i);
+			if (nums.charAt(i) >= 48 && nums.charAt(i) <= 57)
+				str += nums.charAt(i);
 
 			else {
 				if (str.length() > 0)
